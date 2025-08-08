@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Piramu M - Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ===== RESET ===== */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Segoe UI',sans-serif;
+  background:#fff8f6;
+  color:#333;
+  line-height:1.6;
+}
+.container{
+  width:90%;
+  max-width:1100px;
+  margin:auto;
+}
+h1,h2,h3{
+  font-family:serif;
+  color:#6d1f3a;
+}
+section{
+  margin:0;
+  position:relative;
+}
+.card{
+  background:#fff;
+  border-radius:15px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+  padding:1.5rem;
+  margin-bottom:1.5rem;
+  animation:fadeInUp 0.8s ease forwards;
+  opacity:0;
+  transition:all 0.3s ease;
+}
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1rem;
+}
+header{
+  background:#fff;
+  padding:1rem 0;
+  box-shadow:0 2px 8px rgba(0,0,0,0.05);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+header nav{
+  display:flex;
+  justify-content:center;
+  gap:1.5rem;
+}
+header a{
+  text-decoration:none;
+  color:#6d1f3a;
+  font-weight:500;
+  transition:0.3s;
+}
+header a:hover{
+  color:#c94f7c;
+}
+.hero{
+  background:linear-gradient(135deg,#fce4ec,#fff);
+  padding:3rem 1rem;
+  text-align:center;
+  animation:fadeIn 1s ease;
+}
+.hero h1{
+  font-size:2.5rem;
+}
+.hero p{
+  max-width:600px;
+  margin:auto;
+  color:#555;
+}
+.btn{
+  display:inline-block;
+  margin-top:1rem;
+  padding:0.6rem 1.2rem;
+  background:#c94f7c;
+  color:white;
+  border-radius:20px;
+  text-decoration:none;
+  transition:0.3s;
+}
+.btn:hover{
+  background:#6d1f3a;
+}
+.social-btns{
+  margin-top:1rem;
+  display:flex;
+  justify-content:center;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+.social-btns a{
+  background:#6d1f3a;
+  color:white;
+  padding:0.5rem 0.9rem;
+  border-radius:50%;
+  font-size:1.2rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:0.3s;
+}
+.social-btns a:hover{
+  background:#c94f7c;
+}
+/* Skills Cube Style */
+.skill-item{
+  background:#ffe4ec;
+  text-align:center;
+  padding:2rem 1rem;
+  border-radius:15px;
+  font-weight:500;
+  color:#6d1f3a;
+  font-size:1.5rem;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+  transition:all 0.3s ease;
+}
+.skill-item span{
+  display:block;
+  font-size:0.85rem;
+  margin-top:0.4rem;
+}
+.skill-item:hover{
+  transform:translateY(-5px) scale(1.05);
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+  background:#ffc2d1;
+}
+.project-btns{
+  margin-top:0.8rem;
+  display:flex;
+  gap:0.5rem;
+}
+.project-btns a{
+  background:#6d1f3a;
+  color:white;
+  padding:0.4rem 0.8rem;
+  border-radius:5px;
+  text-decoration:none;
+  font-size:0.85rem;
+  transition:0.3s;
+}
+.project-btns a:hover{
+  background:#c94f7c;
+}
+.contact-info p{
+  margin:0.3rem 0;
+}
+footer{
+  background:#6d1f3a;
+  color:white;
+  text-align:center;
+  padding:1rem;
+  margin-top:2rem;
+}
+/* Curved separator */
+.curve{
+  position:relative;
+  height:80px;
+}
+.curve svg{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+/* Animations */
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+@keyframes fadeInUp{
+  from{transform:translateY(20px);opacity:0;}
+  to{transform:translateY(0);opacity:1;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#internships">Internships</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Piramu M</h1>
+  <p>Aspiring Data Engineer passionate about AI, Data Science, and creating impactful, real-world solutions.</p>
+  <a href="piramu.pdf" class="btn" target="_blank">Resume</a>
+  <div class="social-btns">
+    <a href="https://www.linkedin.com/in/piramu-m-a0a007280" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://github.com/Piramu03" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://leetcode.com/u/Piramu/" target="_blank"><i class="fa-solid fa-code"></i></a>
+  </div>
+</section>
+
+<div class="curve">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#fff8f6" d="M0,32L1440,0L1440,320L0,320Z"></path>
+  </svg>
+</div>
+
+<div class="container">
+  <!-- About -->
+  <section id="about">
+    <div class="card">
+      <h2>About Me</h2>
+      <p>I am a final-year B.Tech student specializing in Artificial Intelligence and Data Science, with strong skills in Python, SQL, and data structures. I have hands-on experience in developing AI models, building responsive web applications, and working with technologies like TensorFlow and Power BI. I aim to contribute to data-driven projects, continuously enhance my technical expertise, and collaborate with innovative teams to solve real-world challenges.</p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="card">
+      <h2>Skills</h2>
+      <div class="grid">
+        <div class="skill-item"><i class="fab fa-python"></i><span>Python</span></div>
+        <div class="skill-item"><i class="fas fa-database"></i><span>SQL</span></div>
+        <div class="skill-item"><i class="fab fa-html5"></i><span>HTML</span></div>
+        <div class="skill-item"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
+        <div class="skill-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
+        <div class="skill-item"><i class="fas fa-brain"></i><span>TensorFlow</span></div>
+        <div class="skill-item"><i class="fas fa-chart-bar"></i><span>Power BI</span></div>
+        <div class="skill-item"><i class="fas fa-cloud"></i><span>Cloud Computing</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="card">
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Plant Disease Detection (CNN)</h3>
+          <p>Developed a CNN-based model using TensorFlow and OpenCV to detect plant diseases from leaf images. Deployed with Streamlit for real-time diagnosis and treatment suggestions.</p>
+          <p><strong>Tech:</strong> Python, TensorFlow, OpenCV, HTML/CSS</p>
+          <div class="project-btns">
+            <a href="https://github.com/Piramu03/Bioleaf-AI" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Responsive E-Commerce Website</h3>
+          <p>Built responsive and dynamic web interfaces using HTML, CSS, and JavaScript, focusing on user experience, accessibility, and performance optimization.</p>
+          <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+          <div class="project-btns">
+            <a href="https://github.com/Piramu03/frontend" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <div class="card">
+      <h2>Education</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>B.Tech in AI & Data Science</h3>
+          <p>Erode Sengunthar Engineering College (2022–2026)</p>
+          <p>CGPA: 8.3</p>
+        </div>
+        <div class="card">
+          <h3>HSC</h3>
+          <p>A.V.Rm.V Matriculation Higher Secondary School (2021–2022)</p>
+          <p>Percentage: 82.6%</p>
+        </div>
+        <div class="card">
+          <h3>SSLC</h3>
+          <p>A.V.Rm.V Matriculation Higher Secondary School (2020–2021)</p>
+          <p>Percentage: 93%</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internships & Certifications -->
+  <section id="internships">
+    <div class="card">
+      <h2>Internships & Certifications</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Internships</h3>
+          <ul>
+            <li>Accenture Data Analytics & Visualization Job Simulation</li>
+            <li>Codsoft — Python Developer</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Certifications</h3>
+          <ul>
+            <li>NPTEL — Introduction to IoT</li>
+            <li>Udemy — Python Developer</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="card contact-info">
+      <h2>Contact Me</h2>
+      <p><strong>Email:</strong> prema36063@gmail.com</p>
+      <p><strong>Location:</strong> Tirunelveli</p>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p>© 2025 Piramu </p>
+</footer>
+
+<script>
+// Fade-in on scroll
+const cards = document.querySelectorAll('.card');
+window.addEventListener('scroll', () => {
+  cards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 50){
+      card.style.opacity = "1";
+    }
+  });
+});
+</script>
+
+</body>
+</html>
