@@ -1,397 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Piramu M - Portfolio</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Piramu M · Software Engineer</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-/* ===== RESET ===== */
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{
-  font-family:'Segoe UI',sans-serif;
-  background:#fff8f6;
-  color:#333;
-  line-height:1.6;
-}
-.container{
-  width:90%;
-  max-width:1100px;
-  margin:auto;
-}
-h1,h2,h3{
-  font-family:serif;
-  color:#6d1f3a;
-}
-section{
-  margin:0;
-  position:relative;
-}
-.card{
-  background:#fff;
-  border-radius:15px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.1);
-  padding:1.5rem;
-  margin-bottom:1.5rem;
-  animation:fadeInUp 0.8s ease forwards;
-  opacity:0;
-  transition:all 0.3s ease;
-}
-.card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 8px 20px rgba(0,0,0,0.15);
-}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:1rem;
-}
-header{
-  background:#fff;
-  padding:1rem 0;
-  box-shadow:0 2px 8px rgba(0,0,0,0.05);
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-header nav{
-  display:flex;
-  justify-content:center;
-  gap:1.5rem;
-}
-header a{
-  text-decoration:none;
-  color:#6d1f3a;
-  font-weight:500;
-  transition:0.3s;
-}
-header a:hover{
-  color:#c94f7c;
-}
-.hero{
-  background:linear-gradient(135deg,#fce4ec,#fff);
-  padding:3rem 1rem;
-  text-align:center;
-  animation:fadeIn 1s ease;
-}
-.hero h1{
-  font-size:2.5rem;
-}
-.hero p{
-  max-width:600px;
-  margin:auto;
-  color:#555;
-}
-.btn{
-  display:inline-block;
-  margin-top:1rem;
-  padding:0.6rem 1.2rem;
-  background:#c94f7c;
-  color:white;
-  border-radius:20px;
-  text-decoration:none;
-  transition:0.3s;
-}
-.btn:hover{
-  background:#6d1f3a;
-}
-.social-btns{
-  margin-top:1rem;
-  display:flex;
-  justify-content:center;
-  gap:1rem;
-  flex-wrap:wrap;
-}
-.social-btns a{
-  background:#6d1f3a;
-  color:white;
-  padding:0.5rem 0.9rem;
-  border-radius:50%;
-  font-size:1.2rem;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:0.3s;
-}
-.social-btns a:hover{
-  background:#c94f7c;
-}
-/* Skills Cube Style */
-.skill-item{
-  background:#ffe4ec;
-  text-align:center;
-  padding:2rem 1rem;
-  border-radius:15px;
-  font-weight:500;
-  color:#6d1f3a;
-  font-size:1.5rem;
-  box-shadow:0 4px 15px rgba(0,0,0,0.1);
-  transition:all 0.3s ease;
-}
-.skill-item span{
-  display:block;
-  font-size:0.85rem;
-  margin-top:0.4rem;
-}
-.skill-item:hover{
-  transform:translateY(-5px) scale(1.05);
-  box-shadow:0 8px 20px rgba(0,0,0,0.15);
-  background:#ffc2d1;
-}
-.project-btns{
-  margin-top:0.8rem;
-  display:flex;
-  gap:0.5rem;
-}
-.project-btns a{
-  background:#6d1f3a;
-  color:white;
-  padding:0.4rem 0.8rem;
-  border-radius:5px;
-  text-decoration:none;
-  font-size:0.85rem;
-  transition:0.3s;
-}
-.project-btns a:hover{
-  background:#c94f7c;
-}
-.contact-info p{
-  margin:0.3rem 0;
-}
-footer{
-  background:#6d1f3a;
-  color:white;
-  text-align:center;
-  padding:1rem;
-  margin-top:2rem;
-}
-/* Curved separator */
-.curve{
-  position:relative;
-  height:80px;
-}
-.curve svg{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-}
-/* Animations */
-@keyframes fadeIn{
-  from{opacity:0;}
-  to{opacity:1;}
-}
-@keyframes fadeInUp{
-  from{transform:translateY(20px);opacity:0;}
-  to{transform:translateY(0);opacity:1;}
-}
+:root{--bg:#f1ede4;--ink:#16140f;--mute:#6f695c;--line:#d6d0c2;--acc:#e2431f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121110;--ink:#efeadf;--mute:#9a9384;--line:#2c2a26;--acc:#ff6a42}}
+:root[data-theme="dark"]{--bg:#121110;--ink:#efeadf;--mute:#9a9384;--line:#2c2a26;--acc:#ff6a42}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.6 'Inter Tight',system-ui,sans-serif;overflow-x:hidden}
+::selection{background:var(--acc);color:#fff}
+a{color:inherit}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;color:var(--mute)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 5vw}
+nav{position:fixed;top:0;left:0;right:0;z-index:9;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:calc(env(safe-area-inset-top,0px) + 14px);padding-bottom:14px}
+nav a{text-decoration:none;margin-left:24px;font-size:.92rem}
+nav a:hover{color:var(--acc)}
+nav .l{margin:0;font-weight:600}
+nav .r{display:flex;align-items:center}
+#t{margin-left:24px;background:none;border:1px solid var(--line);color:var(--ink);border-radius:99px;padding:3px 12px;cursor:pointer;font:inherit;font-size:.8rem}
+@media(max-width:700px){nav .r a{display:none}}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:130px 0 48px}
+h1{font:400 clamp(3.4rem,13vw,11.5rem)/.88 'Instrument Serif',Georgia,serif;letter-spacing:-.035em;margin:18px 0 28px}
+h1 em{color:var(--acc)}
+.hero p{max-width:560px;font-size:1.25rem;margin:0 0 30px;color:var(--mute)}
+.hero p b{color:var(--ink);font-weight:500}
+.row-links{display:flex;gap:26px;flex-wrap:wrap}
+.row-links a{border-bottom:1px solid var(--ink);text-decoration:none;padding-bottom:2px}
+.row-links a:hover{color:var(--acc);border-color:var(--acc)}
+.mq{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:16px 0}
+.mq div{display:inline-block;animation:m 32s linear infinite;font:italic 1.9rem 'Instrument Serif',serif}
+.mq span{margin:0 22px}.mq i{color:var(--acc);font-style:normal}
+@keyframes m{to{transform:translateX(-50%)}}
+section{padding:110px 0 10px}
+.sh{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--ink);padding-bottom:14px;margin-bottom:10px}
+h2{font:400 clamp(2.2rem,5vw,3.6rem)/1 'Instrument Serif',serif;margin:0;letter-spacing:-.02em}
+.about{max-width:920px;padding-top:30px}
+.about p.big{font:400 clamp(1.5rem,2.8vw,2.1rem)/1.3 'Instrument Serif',serif;margin:0}
+.facts div{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.facts span:first-child{color:var(--mute)}.facts span:last-child{text-align:right}
+@media(max-width:800px){.about{grid-template-columns:1fr;gap:30px}}
+.proj{border-bottom:1px solid var(--line)}
+.proj button{all:unset;cursor:pointer;display:grid;grid-template-columns:60px 1fr auto;gap:16px;align-items:baseline;width:100%;padding:26px 0;box-sizing:border-box}
+.proj .n{color:var(--mute)}
+.proj .t{font:400 clamp(1.8rem,4.5vw,3.3rem)/1 'Instrument Serif',serif;letter-spacing:-.02em;transition:.3s}
+.proj button:hover .t,.proj.open .t{color:var(--acc);transform:translateX(10px)}
+.proj .pl{font-size:1.5rem;transition:.3s}.proj.open .pl{transform:rotate(45deg)}
+.body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s}
+.proj.open .body{grid-template-rows:1fr}
+.body>div{overflow:hidden}
+.body .in{display:grid;grid-template-columns:60px 1.4fr 1fr;gap:16px;padding:0 0 30px}
+.body p{margin:0;color:var(--mute);max-width:560px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start}
+.tags span{border:1px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.82rem}
+.body a{display:inline-block;margin-top:16px;color:var(--ink);font-weight:500}
+@media(max-width:700px){.body .in{grid-template-columns:1fr}.proj button{grid-template-columns:36px 1fr auto}}
+.tbl div.r{display:grid;grid-template-columns:150px 1fr auto;gap:16px;padding:22px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.tbl h3{font:400 1.7rem/1.1 'Instrument Serif',serif;margin:0}
+.tbl p{margin:4px 0 0;color:var(--mute);font-size:.95rem}
+.tbl .s{font:400 2.2rem 'Instrument Serif',serif;color:var(--acc)}
+@media(max-width:700px){.tbl div.r{grid-template-columns:1fr auto}.tbl div.r>.mono{grid-column:1/-1}}
+.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;padding-top:26px}
+.stack h3{font:500 .78rem 'JetBrains Mono',monospace;text-transform:uppercase;color:var(--acc);letter-spacing:.06em;margin:0 0 10px}
+.stack p{margin:0;font-size:1.05rem;line-height:1.9}
+.contact{padding-bottom:50px}
+.contact .mail{display:block;font:400 clamp(2rem,8.2vw,7.2rem)/1 'Instrument Serif',serif;letter-spacing:-.03em;text-decoration:none;margin:40px 0 26px;word-break:break-all;transition:.3s}
+.contact .mail:hover{color:var(--acc);font-style:italic}
+.rb{display:inline-block;text-decoration:none;background:none;border:1px solid var(--ink);color:var(--ink);border-radius:99px;padding:10px 18px;font:inherit;font-size:.9rem;cursor:pointer;margin:0 10px 10px 0;transition:.2s}.rb:hover{background:var(--acc);border-color:var(--acc);color:#fff}
+.cbtn{background:var(--ink);color:var(--bg);border:0;padding:12px 22px;border-radius:99px;font:inherit;cursor:pointer;margin-right:18px}
+footer{border-top:1px solid var(--line);margin-top:70px;padding:22px 0 calc(env(safe-area-inset-bottom,0px) + 30px)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.mq div{animation:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
+<nav><div class="wrap">
+  <a class="l" href="#top">Piramu M.</a>
+  <div class="r"><a href="#work">Work</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a><button id="t">Light / Dark</button></div>
+</div></nav>
 
-<header>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
-    <a href="#internships">Internships</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<header id="top" class="wrap hero">
+  <span class="mono">Software Engineer · Tirunelveli, India</span>
+  <h1>Piramu <em>M</em>.</h1>
+  <h2 style="margin:0 0 22px;font-style:italic">I build software that thinks.</h2>
+  <p>AI &amp; Data Science graduate. I ship full-stack products end to end, from FastAPI and Django services to React interfaces and LLM-powered features.</p>
+  <div class="row-links"><a href="#work">Selected work ↓</a><a href="https://github.com/Piramu03" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.linkedin.com/in/piramu-m-a0a007280" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+  <div class="rbs" style="margin-top:28px"><a class="rb" href="Piramu_M_Software_Developer_Resume.pdf" download>Resume: Software Developer ↓</a><a class="rb" href="Piramu_M_Data_Analyst_Resume.pdf" download>Resume: Data Analyst ↓</a></div>
 </header>
 
-<section class="hero">
-  <h1>Piramu M</h1>
-  <p>Full-stack Developer &amp; AI Enthusiast building real-world solutions with Python, FastAPI, React, and LLMs.</p>
-  <a href="PIRAMU M.pdf (3).pdf" class="btn" target="_blank">Resume</a>
-  <div class="social-btns">
-    <a href="https://www.linkedin.com/in/piramu-m-a0a007280" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-    <a href="https://github.com/Piramu03" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://leetcode.com/u/Piramu/" target="_blank"><i class="fa-solid fa-code"></i></a>
+<div class="mq"><div id="mq"></div></div>
+
+<main class="wrap">
+<section id="work">
+  <div class="sh rv"><h2>Selected work</h2><span class="mono">06 projects</span></div>
+  <div id="list" class="rv"></div>
+</section>
+
+<section id="about">
+  <div class="sh rv"><h2>About</h2><span class="mono">Who I am</span></div>
+  <div class="about rv">
+    <p class="big">I’m an AI and Data Science graduate who likes turning messy problems into working software. I build full-stack apps with FastAPI, Django and React, and I lean on data analysis to make sure what I build answers a real question.</p>
+    <p style="margin:26px 0 0;color:var(--mute);max-width:720px">At college I co-authored an IEEE paper on detecting diabetic retinopathy from retinal images with a CNN, and that’s where applied AI got me hooked. Since then I’ve built an LLM-powered travel planner, a workflow automation engine and a bus booking platform, and I dig into data with Excel, Power BI and SQL. I’m always looking for the next problem worth solving.</p>
   </div>
 </section>
 
-<div class="curve">
-  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg">
-    <path fill="#fff8f6" d="M0,32L1440,0L1440,320L0,320Z"></path>
-  </svg>
-</div>
+<section id="skills">
+  <div class="sh rv"><h2>Skills</h2><span class="mono">What I work with</span></div>
+  <div class="stack rv">
+    <div><h3>Data &amp; analytics</h3><p>Data Analysis · Microsoft Excel · Power BI · SQL · Pandas</p></div>
+    <div><h3>Back end</h3><p>Python · FastAPI · Django REST · JWT · MySQL · SQLite</p></div>
+    <div><h3>Front end</h3><p>React · JavaScript · HTML · CSS</p></div>
+    <div><h3>AI</h3><p>Gemini API · LLM integration · TensorFlow · Keras · OpenCV</p></div>
+    <div><h3>Workflow</h3><p>Git · GitHub · REST design · Streamlit</p></div>
+  </div>
+</section>
 
-<div class="container">
+<section id="education">
+  <div class="sh rv"><h2>Education</h2><span class="mono">Academics</span></div>
+  <div class="tbl rv">
+    <div class="r"><span class="mono">2022 – 2026</span><div><h3>B.Tech, Artificial Intelligence &amp; Data Science</h3><p>Erode Sengunthar Engineering College · Anna University</p></div><span class="s">8.4 CGPA</span></div>
+    <div class="r"><span class="mono">2021 – 2022</span><div><h3>Higher Secondary (HSC)</h3><p>A.V.Rm.V Matriculation Higher Secondary School</p></div><span class="s">82.6%</span></div>
+    <div class="r"><span class="mono">2020 – 2021</span><div><h3>Secondary (SSLC)</h3><p>A.V.Rm.V Matriculation Higher Secondary School</p></div><span class="s">93%</span></div>
+  </div>
+</section>
 
-  <!-- About -->
-  <section id="about">
-    <div class="card">
-      <h2>About Me</h2>
-      <p>I am a B.Tech graduate specializing in Artificial Intelligence and Data Science (CGPA 8.4) from Erode Sengunthar Engineering College, affiliated with Anna University. I have hands-on experience building full-stack web applications, AI/ML models, and REST APIs using Python, Django, FastAPI, and React. I co-authored an IEEE conference paper on AI-powered medical image detection . I aim to contribute to data-driven and AI-powered projects while continuously growing as a developer.</p>
-    </div>
-  </section>
+<section id="exp">
+  <div class="sh rv"><h2>Experience &amp; recognition</h2><span class="mono">Beyond the classroom</span></div>
+  <div class="tbl rv">
+    <div class="r"><span class="mono">2025</span><div><h3>IEEE Conference Paper, ICECST</h3><p>Co-authored research on AI-powered medical image detection.</p></div><span></span></div>
+    <div class="r"><span class="mono">Internship</span><div><h3>Python Developer, CodSoft</h3><p>Hands-on Python development projects.</p></div><span></span></div>
+    <div class="r"><span class="mono">Simulation</span><div><h3>Data Analytics &amp; Visualization, Accenture</h3><p>Job simulation covering analysis and visual storytelling.</p></div><span></span></div>
+    <div class="r"><span class="mono">Courses</span><div><h3>NPTEL IoT · Udemy Python</h3><p>Introduction to IoT and Python Developer certifications.</p></div><span></span></div>
+  </div>
+</section>
 
-  <!-- Skills -->
-  <section id="skills">
-    <div class="card">
-      <h2>Skills</h2>
-      <div class="grid">
-        <div class="skill-item"><i class="fab fa-python"></i><span>Python</span></div>
-        <div class="skill-item"><i class="fas fa-database"></i><span>SQL</span></div>
-        <div class="skill-item"><i class="fab fa-react"></i><span>React</span></div>
-        <div class="skill-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
-        <div class="skill-item"><i class="fab fa-html5"></i><span>HTML/CSS</span></div>
-        <div class="skill-item"><i class="fas fa-bolt"></i><span>FastAPI</span></div>
-        <div class="skill-item"><i class="fas fa-layer-group"></i><span>Django / DRF</span></div>
-        <div class="skill-item"><i class="fas fa-robot"></i><span>LLM / GenAI</span></div>
-        <div class="skill-item"><i class="fas fa-code-branch"></i><span>Git / GitHub</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects">
-    <div class="card">
-      <h2>Projects</h2>
-      <div class="grid">
-
-        <div class="card">
-          <h3>AI Travel Planner</h3>
-          <p>Conversational travel planning assistant powered by Google Gemini API. Users describe their trip and receive personalised itineraries, budgets, and recommendations in real time.</p>
-          <p><strong>Tech:</strong> FastAPI, Gemini API, React, Python</p>
-          <div class="project-btns">
-            <a href="https://github.com/Piramu03/AI_Travel_Planner" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>NexFlow — Workflow Automation Engine</h3>
-          <p>Full-stack workflow automation platform with a custom Python rule engine, dynamic task routing, JWT-based auth, and a React dashboard for managing multi-step business processes.</p>
-          <p><strong>Tech:</strong> Django REST, React, MySQL, JWT</p>
-          <div class="project-btns">
-            <a href="https://github.com/Piramu03/NexFlow" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Task Workflow System</h3>
-          <p>Collaborative task management system with real-time status tracking, role-based access control, and a clean Kanban-style interface built on a RESTful backend.</p>
-          <p><strong>Tech:</strong> Django, React, REST API</p>
-          <div class="project-btns">
-            <a href="https://github.com/Piramu03/TaskManagement" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>SmartBus — Seat Reservation Platform</h3>
-          <p>Full-stack bus seat reservation system with an interactive seat map, real-time availability updates, booking management, and secure user authentication for a seamless passenger experience.</p>
-          <p><strong>Tech:</strong> Django, Python, MySQL, HTML/CSS, JavaScript</p>
-          <div class="project-btns">
-            <a href="https://github.com/Piramu03/Smartbus-" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Bioleaf AI — Plant Disease Detection</h3>
-          <p>CNN-based model using TensorFlow and OpenCV to detect plant diseases from leaf images, deployed with Streamlit for real-time diagnosis and treatment suggestions.</p>
-          <p><strong>Tech:</strong> Python, TensorFlow, OpenCV, Streamlit</p>
-          <div class="project-btns">
-            <a href="https://github.com/Piramu03/Bioleaf-AI" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Responsive E-Commerce Website</h3>
-          <p>Built responsive and dynamic web interfaces using HTML, CSS, and JavaScript, focusing on user experience, accessibility, and performance optimization.</p>
-          <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-          <div class="project-btns">
-            <a href="https://github.com/Piramu03/frontend" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Education -->
-  <section id="education">
-    <div class="card">
-      <h2>Education</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>B.Tech in AI &amp; Data Science</h3>
-          <p>Erode Sengunthar Engineering College (2022–2026)</p>
-          <p>CGPA: 8.4</p>
-        </div>
-        <div class="card">
-          <h3>HSC</h3>
-          <p>A.V.Rm.V Matriculation Higher Secondary School (2021–2022)</p>
-          <p>Percentage: 82.6%</p>
-        </div>
-        <div class="card">
-          <h3>SSLC</h3>
-          <p>A.V.Rm.V Matriculation Higher Secondary School (2020–2021)</p>
-          <p>Percentage: 93%</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Internships & Certifications -->
-  <section id="internships">
-    <div class="card">
-      <h2>Internships &amp; Certifications</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Achievements</h3>
-          <ul style="padding-left:1.2rem;line-height:2;">
-            <li>IEEE Conference Paper — ICECST 2025 (AI Medical Imaging)</li>
-            <li>Accenture Data Analytics &amp; Visualization Job Simulation</li>
-            <li>Codsoft — Python Developer Internship</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Certifications</h3>
-          <ul style="padding-left:1.2rem;line-height:2;">
-            <li>NPTEL — Introduction to IoT</li>
-            <li>Udemy — Python Developer</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <div class="card contact-info">
-      <h2>Contact Me</h2>
-      <p><i class="fas fa-envelope" style="color:#c94f7c;margin-right:0.4rem;"></i> prema36063@gmail.com</p>
-      <p><i class="fas fa-map-marker-alt" style="color:#c94f7c;margin-right:0.4rem;"></i> Tirunelveli, Tamil Nadu</p>
-      <div class="social-btns" style="justify-content:flex-start;margin-top:1rem;">
-        <a href="https://www.linkedin.com/in/piramu-m-a0a007280" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/Piramu03" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://leetcode.com/u/Piramu/" target="_blank"><i class="fa-solid fa-code"></i></a>
-      </div>
-    </div>
-  </section>
-
-</div>
-
-<footer>
-  <p>© 2026 Piramu M</p>
-</footer>
+<section id="contact" class="contact">
+  <div class="sh rv"><h2>Contact</h2></div>
+  <div class="rv">
+    <a class="mail" id="mail" href="mailto:prema36063@gmail.com">prema36063@gmail.com</a>
+    <div class="rbs" style="margin:0 0 22px"><a class="rb" href="Piramu_M_Software_Developer_Resume.pdf" download>Resume: Software Developer ↓</a><a class="rb" href="Piramu_M_Data_Analyst_Resume.pdf" download>Resume: Data Analyst ↓</a></div>
+    <button class="cbtn" id="cp">Copy email</button>
+    <span class="row-links" style="display:inline-flex"><a href="https://www.linkedin.com/in/piramu-m-a0a007280" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/Piramu03" target="_blank" rel="noopener">GitHub ↗</a><a href="https://leetcode.com/u/Piramu/" target="_blank" rel="noopener">LeetCode ↗</a></span>
+  </div>
+</section>
+</main>
+<footer><div class="wrap mono"><span>© 2026 Piramu M</span><span>Designed &amp; coded by me</span></div></footer>
 
 <script>
-const cards = document.querySelectorAll('.card');
-window.addEventListener('scroll', () => {
-  cards.forEach(card => {
-    const rect = card.getBoundingClientRect();
-    if(rect.top < window.innerHeight - 50){
-      card.style.opacity = "1";
-    }
-  });
-});
-// trigger for cards already in view on load
-window.dispatchEvent(new Event('scroll'));
+const P=[
+["AI Travel Planner","A conversational travel assistant on the Gemini API. Describe a trip in plain language and get a tailored itinerary, budget and recommendations in real time.",["FastAPI","Gemini API","React","Python"],"https://github.com/Piramu03/AI_Travel_Planner"],
+["NexFlow","A workflow automation engine with a custom Python rule engine, dynamic task routing, JWT auth and a React dashboard for multi-step business processes.",["Django REST","React","MySQL","JWT"],"https://github.com/Piramu03/NexFlow"],
+["Task Workflow System","Collaborative task management with live status tracking, role-based access control and a Kanban-style interface over a RESTful backend.",["FastAPI","React","RBAC"],"https://github.com/Piramu03/TaskManagement"],
+["SmartBus","A seat reservation platform with an interactive seat map, live availability, booking management and secure user authentication.",["Django","MySQL","JavaScript"],"https://github.com/Piramu03/Smartbus-"],
+["Bioleaf AI","A CNN that spots plant diseases from leaf photos, served through Streamlit with instant diagnosis and treatment suggestions.",["TensorFlow","OpenCV","Streamlit"],"https://github.com/Piramu03/Bioleaf-AI"],
+["Responsive E-Commerce","A fast, accessible storefront interface built with plain HTML, CSS and JavaScript, focused on usability and performance.",["HTML","CSS","JavaScript"],"https://github.com/Piramu03/frontend"]];
+const L=document.getElementById('list');
+L.innerHTML=P.map((p,i)=>`<div class="proj${i?'':' open'}"><button aria-expanded="${!i}"><span class="n mono">0${i+1}</span><span class="t">${p[0]}</span><span class="pl">+</span></button><div class="body"><div><div class="in"><span></span><div><p>${p[1]}</p><a href="${p[3]}" target="_blank" rel="noopener">View source ↗</a></div><div class="tags">${p[2].map(t=>`<span>${t}</span>`).join('')}</div></div></div></div></div>`).join('');
+L.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const pr=b.parentElement,o=pr.classList.contains('open');
+ L.querySelectorAll('.proj').forEach(x=>{x.classList.remove('open');x.firstChild.setAttribute('aria-expanded','false')});
+ if(!o){pr.classList.add('open');b.setAttribute('aria-expanded','true')}});
+const S=["Python","Data Analysis","Excel","Power BI","SQL","FastAPI","Django","React","Gemini API","TensorFlow","Git"];
+const m=S.map(s=>`<span>${s}</span><i>✦</i>`).join('');document.getElementById('mq').innerHTML=m+m;
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(n=>io.observe(n));
+document.getElementById('t').onclick=()=>{const R=document.documentElement,d=R.dataset.theme?R.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;R.dataset.theme=d?'light':'dark'};
+document.getElementById('cp').onclick=async e=>{try{await navigator.clipboard.writeText('prema36063@gmail.com');e.target.textContent='Copied ✓'}catch(_){e.target.textContent='Press and hold the email'}setTimeout(()=>e.target.textContent='Copy email',2000)};
 </script>
-
 </body>
 </html>
